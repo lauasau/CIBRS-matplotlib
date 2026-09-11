@@ -6,3 +6,5 @@ Welcome! :smile: For this project, I will create a step-by-step tutorial on how 
 
 ## :chart_with_upwards_trend: Obtaining and Importing the Data
 For this project, I will be using CIBRS (California Incident Reporting System) data. Specifically, we will be analyzing San Diego crime data from the years 2021 to 2025. The dataset that I am using can be found [here](https://opendata.sandag.org/stories/s/bsk4-5xvp).
+
+First, we will need to import the following libraries: pandas, matplotlib.pyplot, matplotlib.dates, and Path.
