@@ -17,8 +17,9 @@ from pathlib import Path
 ```
 
 ## :file_folder: Loading the Data
-```python
 Next, we will load our data ...
+
+```python
 SRC = "/Users/lau/Downloads/CIBRS_Group_A_Public_Crime_Data_20260827(in).csv"
 OUT = Path(__file__).parent / "charts"
 OUT.mkdir(exist_ok=True)
@@ -29,6 +30,44 @@ OUT.mkdir(exist_ok=True)
 ```OUT``` is the output directory for the generated PNGs. ```Path(__file__).parent``` resolves to the folder the script itself lives in (regardless of what directory you run it from), and ```/ "charts"``` appends a ```charts``` subfolder to that path — so charts always land next to the script, not wherever your terminal happens to be ```cd```'d into.
 
 ```OUT.mkdir(exist_ok=True)``` creates that charts/ folder if it doesn't exist yet. ```exist_ok=True``` means it won't raise an error on subsequent runs when the folder is already there — so the script is safe to re-run repeatedly.
+
+
+## :paintbrush: Styling the Color Palette
+This is completely optional: I will be using the Catppuccin Mocha theme in order to color my charts. I will be creating a custom color palette dictionary by utilizing the palette's official hex codes.
+
+```python
+# --- Catppuccin Mocha palette ---
+CTP = {
+    "base": "#1e1e2e", "mantle": "#181825", "crust": "#11111b",
+    "surface0": "#313244", "surface1": "#45475a", "surface2": "#585b70",
+    "text": "#cdd6f4", "subtext0": "#a6adc8", "overlay0": "#6c7086",
+    "blue": "#89b4fa", "lavender": "#b4befe", "mauve": "#cba6f7",
+    "pink": "#f5c2e7", "red": "#f38ba8", "peach": "#fab387",
+    "yellow": "#f9e2af", "green": "#a6e3a1", "teal": "#94e2d5",
+    "sky": "#89dceb", "sapphire": "#74c7ec", "maroon": "#eba0ac",
+}
+```
+
+- Backgrounds (dark → darker): ```base``` is the figure background
+  ```mantle``` is the axes/plot-area background (slightly darker, gives the plot a subtle "panel" feel against the figure)
+  ```crust``` is darkest (defined but unused here — reserved for things like tooltips/borders if needed).
+- Surfaces: ```surface0```/```surface1```/```surface2``` are mid-tone grays used for UI chrome — I use ```surface1 for grid lines and surface2 for the axes border/edge, surface0 for the legend box background.
+Text tones: text (brightest, main labels/titles), subtext0 (dimmer, used for tick labels so they recede a bit), overlay0 (dimmest, unused currently — reserved for de-emphasized elements).
+Accent colors: blue, mauve, green, peach, pink, yellow, teal, red, lavender, sapphire, sky, maroon — the palette's signature pastel accents used for data (bars, lines, histogram fill).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
