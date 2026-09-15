@@ -48,12 +48,12 @@ CTP = {
 }
 ```
 
-- Backgrounds (dark → darker): ```base``` is the figure background
-  ```mantle``` is the axes/plot-area background (slightly darker, gives the plot a subtle "panel" feel against the figure)
-  ```crust``` is darkest (defined but unused here — reserved for things like tooltips/borders if needed).
-- Surfaces: ```surface0```/```surface1```/```surface2``` are mid-tone grays used for UI chrome — I use ```surface1 for grid lines and surface2 for the axes border/edge, surface0 for the legend box background.
-Text tones: text (brightest, main labels/titles), subtext0 (dimmer, used for tick labels so they recede a bit), overlay0 (dimmest, unused currently — reserved for de-emphasized elements).
-Accent colors: blue, mauve, green, peach, pink, yellow, teal, red, lavender, sapphire, sky, maroon — the palette's signature pastel accents used for data (bars, lines, histogram fill).
+- Background: ```base``` is the figure background
+  ```mantle``` is the axes/plot-area background. It is slightly darker and gives the plot a subtle "panel" feel against the figure.
+  ```crust``` is darkest. It is defined but unused here. It is reserved for things like tooltips/borders if it is ever needed. 
+- Surfaces: ```surface0```/```surface1```/```surface2``` are mid-tone grays used for UI chrome. For this, I use ```surface1``` for grid lines and ```surface2``` for the axes border/edge, and ```surface0``` for the legend box background.
+- Text tones: ```text``` (brightest, main labels/titles), ```subtext0``` (dimmer, used for tick labels so they recede a bit), ```overlay0``` (dimmest, unused currently — reserved for de-emphasized elements).
+Accent colors: ```blue```, ```mauve```, ```green```, ```peach```, ```pink```, ```yellow```, ```teal```, ```red```, ```lavender```, ```sapphire```, ```sky```, ```maroon``` are the palette's signature pastel accents used for data, such as bars, lines, and histogram fill.
 
 
 
