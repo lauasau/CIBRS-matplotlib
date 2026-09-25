@@ -60,7 +60,7 @@ CYCLE = [CTP[c] for c in ("blue", "mauve", "green", "peach", "pink",
                           "yellow", "teal", "red", "lavender", "sapphire")]
 ```
 
-
+```CYCLE``` pulls 10 of those accent colors out in a chosen order, which then feeds it to ```axes.prop_cycle``` in the ```rcParams``` block. This will make matplotlib automatically rotate through the Catppuccin colors for any chart that doesn't set an explicit color.
 
 
 
