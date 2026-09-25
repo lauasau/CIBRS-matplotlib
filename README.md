@@ -55,6 +55,11 @@ CTP = {
 - Text tones: ```text``` (brightest, main labels/titles), ```subtext0``` (dimmer, used for tick labels so they recede a bit), ```overlay0``` (dimmest, unused currently — reserved for de-emphasized elements).
 Accent colors: ```blue```, ```mauve```, ```green```, ```peach```, ```pink```, ```yellow```, ```teal```, ```red```, ```lavender```, ```sapphire```, ```sky```, ```maroon``` are the palette's signature pastel accents used for data, such as bars, lines, and histogram fill.
 
+```python
+CYCLE = [CTP[c] for c in ("blue", "mauve", "green", "peach", "pink",
+                          "yellow", "teal", "red", "lavender", "sapphire")]
+```
+
 
 
 
