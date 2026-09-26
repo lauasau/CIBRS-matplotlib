@@ -1,6 +1,10 @@
 # :memo: Introduction
 
-Welcome! :smile: For this project, I will create a step-by-step tutorial on how I create visualizations with Python's matplotlib library. I love using matplotlib to create visualizations since it is extremely easy to learn and use! The goal for this project is to improve my Python skills, so hopefully this tutorial can help for you too :smiling_face_with_three_hearts:
+Welcome! :smile: 
+
+For this project, I will create a step-by-step tutorial on how I create visualizations with Python's matplotlib library. I love using matplotlib to create visualizations since it is extremely easy to learn and use! 
+
+The goal for this project is to improve my Python skills, so hopefully this tutorial can help for you too :smiling_face_with_three_hearts:
 
 <img width="640" height="180" alt="image" src="https://github.com/user-attachments/assets/0edb7720-ab9a-4d77-93a3-6989b2bd54c4" />
 
@@ -33,7 +37,7 @@ OUT.mkdir(exist_ok=True)
 
 
 ## :paintbrush: Styling the Color Palette
-This is completely optional: I will be using the Catppuccin Mocha theme in order to color my charts. I will be creating a custom color palette dictionary by utilizing the palette's official hex codes.
+This is completely optional: I will be using the Catppuccin Mocha theme in order to color my charts. I will create a custom color palette dictionary using the palette's official hex codes.
 
 ```python
 # --- Catppuccin Mocha palette ---
@@ -48,12 +52,23 @@ CTP = {
 }
 ```
 
-- Background: ```base``` is the figure background
+- **Backgrounds:** ```base``` is the figure background
+
   ```mantle``` is the axes/plot-area background. It is slightly darker and gives the plot a subtle "panel" feel against the figure.
-  ```crust``` is darkest. It is defined but unused here. It is reserved for things like tooltips/borders if it is ever needed. 
-- Surfaces: ```surface0```/```surface1```/```surface2``` are mid-tone grays used for UI chrome. For this, I use ```surface1``` for grid lines and ```surface2``` for the axes border/edge, and ```surface0``` for the legend box background.
-- Text tones: ```text``` (brightest, main labels/titles), ```subtext0``` (dimmer, used for tick labels so they recede a bit), ```overlay0``` (dimmest, unused currently — reserved for de-emphasized elements).
-Accent colors: ```blue```, ```mauve```, ```green```, ```peach```, ```pink```, ```yellow```, ```teal```, ```red```, ```lavender```, ```sapphire```, ```sky```, ```maroon``` are the palette's signature pastel accents used for data, such as bars, lines, and histogram fill.
+  
+  ```crust``` is darkest. It is defined but unused here. It is reserved for things like tooltips/borders if it is ever needed.
+  
+- **Surfaces:** ```surface0```/```surface1```/```surface2``` are mid-tone grays used for UI chrome.
+
+For this, I use ```surface1``` for grid lines and ```surface2``` for the axes border/edge, and ```surface0``` for the legend box background.
+  
+- **Text tones:** ```text``` will be displayed the brightest and are used for main labels and titles.
+
+```subtext0``` will be displayed dimmer. They will be used for tick labels so they recede a bit. 
+
+```overlay0``` are the dimmest and are unused currently. They are reserved for de-emphasized elements.
+
+-**Accent colors:** ```blue```, ```mauve```, ```green```, ```peach```, ```pink```, ```yellow```, ```teal```, ```red```, ```lavender```, ```sapphire```, ```sky```, ```maroon``` are the palette's signature pastel accents used for data, such as bars, lines, and histogram fill.
 
 ```python
 CYCLE = [CTP[c] for c in ("blue", "mauve", "green", "peach", "pink",
