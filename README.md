@@ -71,7 +71,7 @@ CTP = {
     ```overlay0``` are the dimmest and are currently unused. They are reserved for de-emphasized elements.
   
 
--**Accent colors:** ```blue```, ```mauve```, ```green```, ```peach```, ```pink```, ```yellow```, ```teal```, ```red```, ```lavender```, ```sapphire```, ```sky```, ```maroon``` are the palette's signature pastel accents used for data, such as bars, lines, and histogram fill.
+- **Accent colors:** ```blue```, ```mauve```, ```green```, ```peach```, ```pink```, ```yellow```, ```teal```, ```red```, ```lavender```, ```sapphire```, ```sky```, ```maroon``` are the palette's signature pastel accents used for data, such as bars, lines, and histogram fill.
 
 ```python
 CYCLE = [CTP[c] for c in ("blue", "mauve", "green", "peach", "pink",
