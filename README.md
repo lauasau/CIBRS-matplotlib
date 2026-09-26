@@ -52,21 +52,24 @@ CTP = {
 }
 ```
 
-- **Backgrounds:** ```base``` is the figure background
+- **Backgrounds:** ```base``` is the figure background.
 
-  ```mantle``` is the axes/plot-area background. It is slightly darker and gives the plot a subtle "panel" feel against the figure.
+    ```mantle``` is the axes/plot-area background. It is slightly darker and gives the plot a subtle "panel" feel against the figure.
+
+     ```crust``` is the darkest. It is defined but unused here. It is reserved for things like tooltips/borders if it is ever needed.
   
-  ```crust``` is darkest. It is defined but unused here. It is reserved for things like tooltips/borders if it is ever needed.
   
 - **Surfaces:** ```surface0```/```surface1```/```surface2``` are mid-tone grays used for UI chrome.
 
-For this, I use ```surface1``` for grid lines and ```surface2``` for the axes border/edge, and ```surface0``` for the legend box background.
+    For this, I use ```surface1``` for grid lines and ```surface2``` for the axes border/edge, and ```surface0``` for the legend box background.
+  
   
 - **Text tones:** ```text``` will be displayed the brightest and are used for main labels and titles.
 
-```subtext0``` will be displayed dimmer. They will be used for tick labels so they recede a bit. 
+    ```subtext0``` will be displayed dimmer. They will be used for tick labels so they recede a bit. 
 
-```overlay0``` are the dimmest and are unused currently. They are reserved for de-emphasized elements.
+    ```overlay0``` are the dimmest and are currently unused. They are reserved for de-emphasized elements.
+  
 
 -**Accent colors:** ```blue```, ```mauve```, ```green```, ```peach```, ```pink```, ```yellow```, ```teal```, ```red```, ```lavender```, ```sapphire```, ```sky```, ```maroon``` are the palette's signature pastel accents used for data, such as bars, lines, and histogram fill.
 
@@ -74,6 +77,7 @@ For this, I use ```surface1``` for grid lines and ```surface2``` for the axes bo
 CYCLE = [CTP[c] for c in ("blue", "mauve", "green", "peach", "pink",
                           "yellow", "teal", "red", "lavender", "sapphire")]
 ```
+
 
 ```CYCLE``` pulls 10 of those accent colors out in a chosen order, which then feeds it to ```axes.prop_cycle``` in the ```rcParams``` block. This will make matplotlib automatically rotate through the Catppuccin colors for any chart that doesn't set an explicit color.
 
