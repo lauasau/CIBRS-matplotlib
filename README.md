@@ -79,7 +79,9 @@ CYCLE = [CTP[c] for c in ("blue", "mauve", "green", "peach", "pink",
 ```
 
 
-```CYCLE``` pulls 10 of those accent colors out in a chosen order, which then feeds it to ```axes.prop_cycle``` in the ```rcParams``` block. This will make matplotlib automatically rotate through the Catppuccin colors for any chart that doesn't set an explicit color.
+```CYCLE``` pulls 10 of those accent colors out in a chosen order, which then feeds it to ```axes.prop_cycle``` in the ```rcParams``` block. This will make matplotlib automatically rotate through the Catppuccin colors for any chart that doesn't set an explicit color. The rest of the dict entries (```base```, ```mantle```, ```text```, etc) get referenced individually throughout the script wherever a specific role (background, gridline, label) needs a specific token.
+
+Basically, it is a design-token table. One source of truth for the theme's colors, so if you ever want to swap to a different Catppucin flavor (Frappe, Latte, Macchiato) you would just have to replace the hex values in this dict rather than hunting through every chart.
 
 
 
