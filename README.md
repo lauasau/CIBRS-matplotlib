@@ -84,7 +84,20 @@ CYCLE = [CTP[c] for c in ("blue", "mauve", "green", "peach", "pink",
 Basically, it is a design-token table. One source of truth for the theme's colors, so if you ever want to swap to a different Catppucin flavor (Frappe, Latte, Macchiato) you would just have to replace the hex values in this dict rather than hunting through every chart.
 
 
-
+```python
+plt.rcParams.update({
+    "figure.dpi": 130, "font.size": 10,
+    "axes.grid": True, "grid.alpha": 0.25, "axes.axisbelow": True,
+    "figure.facecolor": CTP["base"], "savefig.facecolor": CTP["base"],
+    "axes.facecolor": CTP["mantle"], "axes.edgecolor": CTP["surface2"],
+    "axes.labelcolor": CTP["text"], "axes.titlecolor": CTP["text"],
+    "text.color": CTP["text"], "xtick.color": CTP["subtext0"],
+    "ytick.color": CTP["subtext0"], "grid.color": CTP["surface1"],
+    "axes.prop_cycle": plt.cycler(color=CYCLE),
+    "legend.facecolor": CTP["surface0"], "legend.edgecolor": CTP["surface2"],
+})
+ACCENT = CTP["blue"]
+```
 
 
 
