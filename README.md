@@ -99,8 +99,11 @@ plt.rcParams.update({
 ACCENT = CTP["blue"]
 ```
 
+```plt.rcParams``` is matplotlib's global settings dictionary.
 
+```.update({})``` overwrites many settings at once, and every figure created afterward picks them up. 
 
+```ACCENT = CTP["blue"]``` is a default color variable that charts 1 and 2 use directly for their main line and bars.
 
 
 
