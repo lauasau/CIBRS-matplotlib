@@ -9,7 +9,7 @@ The goal for this project is to improve my Python skills, so hopefully this tuto
 <img width="640" height="180" alt="image" src="https://github.com/user-attachments/assets/0edb7720-ab9a-4d77-93a3-6989b2bd54c4" />
 
 ## :chart_with_upwards_trend: Obtaining the Data
-For this project, I will be using CIBRS (California Incident Reporting System) data. Specifically, we will be analyzing San Diego crime data from the years 2021 to 2025. The dataset that I am using can be found [here](https://opendata.sandag.org/stories/s/bsk4-5xvp).
+For this project, I will be using CIBRS (California Incident Reporting System) data. Specifically, we will analyze San Diego crime data from the years 2021 to 2025. The dataset that I am using can be found [here](https://opendata.sandag.org/stories/s/bsk4-5xvp).
 
 First, we will need to import the following libraries: 
 
@@ -105,6 +105,14 @@ ACCENT = CTP["blue"]
 
 ```ACCENT = CTP["blue"]``` is a default color variable that charts 1 and 2 use directly for their main line and bars.
 
+```rcParams``` is global, so these setting apply to every chart. That's why the individual chart blocks only set a color when they want something other than the default. 
+
+
+```python
+from matplotlib.colors import LinearSegmentedColormap
+CTP_SEQ = LinearSegmentedColormap.from_list(
+    "ctp_seq", [CTP["mantle"], CTP["blue"], CTP["mauve"], CTP["pink"], CTP["yellow"]])
+```
 
 
 
