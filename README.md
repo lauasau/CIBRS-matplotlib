@@ -117,6 +117,9 @@ CTP_SEQ = LinearSegmentedColormap.from_list(
     "ctp_seq", [CTP["mantle"], CTP["blue"], CTP["mauve"], CTP["pink"], CTP["yellow"]])
 ```
 
+```pd.read_csv(SRC)``` reads the CSV at the path defined earlier into a pandas DataFrame df, with one row per record and one column per CSV field.
+
+```pd.to_datetime(...)``` converts the ```"Incident Date"``` column from text (Ex: ```"2021 Jan 07 06:46:24 PM"```) into actual datetime objects, using ```format=``` to tell pandas exactly how to parse that text layout. ```errors="coerce"``` means any value that doesn't match the format becomes NaT (pandas' "not a time") instead of crashing the script.
 
 
 
