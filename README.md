@@ -108,6 +108,9 @@ ACCENT = CTP["blue"]
 ```rcParams``` is global, so these setting apply to every chart. That's why the individual chart blocks only set a color when they want something other than the default. 
 
 
+
+## :fork_and_knife: Prepping the Data
+Next, we will prep our data.
 ```python
 from matplotlib.colors import LinearSegmentedColormap
 CTP_SEQ = LinearSegmentedColormap.from_list(
