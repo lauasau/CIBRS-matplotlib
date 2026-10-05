@@ -117,10 +117,25 @@ CTP_SEQ = LinearSegmentedColormap.from_list(
     "ctp_seq", [CTP["mantle"], CTP["blue"], CTP["mauve"], CTP["pink"], CTP["yellow"]])
 ```
 
-```pd.read_csv(SRC)``` reads the CSV at the path defined earlier into a pandas DataFrame df, with one row per record and one column per CSV field.
+```CTP_SEQ``` is a custom color gradient that is used later to color the weekday x hour heatmap. 
+
+```python
+df = pd.read_csv(SRC)
+df["Incident Date"] = pd.to_datetime(df["Incident Date"], format="%Y %b %d %I:%M:%S %p", errors="coerce")
+df = df.dropna(subset=["Incident Date"])
+df["month"] = df["Incident Date"].dt.to_period("M").dt.to_timestamp()
+df["hour"] = df["Incident Date"].dt.hour
+df["dow"] = df["Incident Date"].dt.dayofweek
+```
+
+
+```pd.read_csv(SRC)``` reads the CSV at the path defined earlier into a pandas DataFrame 
 
 ```pd.to_datetime(...)``` converts the ```"Incident Date"``` column from text (Ex: ```"2021 Jan 07 06:46:24 PM"```) into actual datetime objects, using ```format=``` to tell pandas exactly how to parse that text layout. ```errors="coerce"``` means any value that doesn't match the format becomes NaT (pandas' "not a time") instead of crashing the script.
 
+```df.dropna(subset=["Incident Date"])``` removes any rows that conversion failed (Ex: rows with ```NaT```) so only rows with a valid, parseable date remain.
+
+```df["month"]``` adds a new column holding each row's date rounded down to its calendar month (Ex: ```2021 Jan 07``` becomes ```2021-01-01```). ```.dt.to_period("M")``` buckets to the month, ```.dt.to_timestamp()``` converts that back to a normal timestamp which is used by chart #1 to group incidents per month.
 
 
 
