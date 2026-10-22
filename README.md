@@ -137,6 +137,10 @@ df["dow"] = df["Incident Date"].dt.dayofweek
 
 ```df["month"]``` adds a new column holding each row's date rounded down to its calendar month (Ex: ```2021 Jan 07``` becomes ```2021-01-01```). ```.dt.to_period("M")``` buckets to the month, ```.dt.to_timestamp()``` converts that back to a normal timestamp which is used by chart #1 to group incidents per month.
 
+```df["hour"]``` adds a column with just the hour of the day (0-23) that the incident occurred, which is used by the heat map.
+
+```df["dow"]``` adds a column with the day of the week as a number (0 = Monday ... 6 = Sunday), which is also used by the heatmap. 
+
 
 
 
