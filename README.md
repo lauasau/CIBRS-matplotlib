@@ -142,7 +142,7 @@ df["dow"] = df["Incident Date"].dt.dayofweek
 ```df["dow"]``` adds a column with the day of the week as a number (0 = Monday ... 6 = Sunday), which is also used by the heatmap. 
 
 # :camera: Visualizing Our Data
-Moving on to the next step, we will start with our first visualization, which is the monthly incident trend.
+First, we will start with our "Monthly Incident Trend" visual. 
 
 ```python
 # 1. Monthly incident trend
@@ -156,6 +156,7 @@ ax.xaxis.set_major_locator(mdates.YearLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
 fig.tight_layout(); fig.savefig(OUT / "01_monthly_trend.png"); plt.close(fig)
 ```
+<img width="1430" height="650" alt="image" src="https://github.com/user-attachments/assets/35bb98d4-aab5-4803-9074-75216bec2c89" />
 
 
 
