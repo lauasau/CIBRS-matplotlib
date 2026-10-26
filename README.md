@@ -158,10 +158,20 @@ fig.tight_layout(); fig.savefig(OUT / "01_monthly_trend.png"); plt.close(fig)
 ```
 <img width="1430" height="650" alt="image" src="https://github.com/user-attachments/assets/35bb98d4-aab5-4803-9074-75216bec2c89" />
 
+Next ...
 
-
-
-
+```python
+# 2. Offense type breakdown
+fig, ax = plt.subplots(figsize=(9, 5))
+o = df["CIBRS Offense Description"].value_counts().head(10).sort_values()
+ax.barh(o.index, o.values, color=ACCENT)
+ax.set_title("Top offense types")
+ax.set_xlabel("Number of victims")
+for i, v in enumerate(o.values):
+    ax.text(v, i, f" {v:,}", va="center", fontsize=8)
+fig.tight_layout(); fig.savefig(OUT / "02_offense_types.png"); plt.close(fig)
+```
+<img width="1170" height="650" alt="image" src="https://github.com/user-attachments/assets/53dc9834-b806-495d-87f2-21bfa7e53ad5" />
 
 
 
