@@ -158,7 +158,8 @@ fig.tight_layout(); fig.savefig(OUT / "01_monthly_trend.png"); plt.close(fig)
 ```
 <img width="1430" height="650" alt="image" src="https://github.com/user-attachments/assets/35bb98d4-aab5-4803-9074-75216bec2c89" />
 
-Next ...
+
+Next, we will create a bar chart:
 
 ```python
 # 2. Offense type breakdown
