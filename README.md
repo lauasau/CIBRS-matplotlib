@@ -186,6 +186,18 @@ fig.tight_layout(); fig.savefig(OUT / "03_by_agency.png"); plt.close(fig)
 ```
 <img width="1170" height="650" alt="image" src="https://github.com/user-attachments/assets/0aab846d-1dc8-4163-bdc2-2f1d01a7068e" />
 
+Next, the victim distribution chart:
+```python
+# 4. Victim age distribution
+fig, ax = plt.subplots(figsize=(9, 5))
+age = df["Victim Age"].dropna()
+age = age[(age >= 0) & (age <= 100)]
+ax.hist(age, bins=range(0, 101, 2), color=CTP["peach"], edgecolor=CTP["base"], linewidth=0.3)
+ax.set_title("Victim age distribution")
+ax.set_xlabel("Age"); ax.set_ylabel("Victims")
+fig.tight_layout(); fig.savefig(OUT / "04_victim_age.png"); plt.close(fig)
+```
+<img width="1170" height="650" alt="image" src="https://github.com/user-attachments/assets/95f1d05c-56de-48cb-86e2-aeed885e4f3a" />
 
 
 
