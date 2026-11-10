@@ -174,6 +174,17 @@ fig.tight_layout(); fig.savefig(OUT / "02_offense_types.png"); plt.close(fig)
 ```
 <img width="1170" height="650" alt="image" src="https://github.com/user-attachments/assets/53dc9834-b806-495d-87f2-21bfa7e53ad5" />
 
+Next, another bar chart:
+```python
+# 3. Incidents by agency
+fig, ax = plt.subplots(figsize=(9, 5))
+a = df["Agency"].value_counts().head(10).sort_values()
+ax.barh(a.index, a.values, color=CTP["mauve"])
+ax.set_title("Reporting agency")
+ax.set_xlabel("Number of victims")
+fig.tight_layout(); fig.savefig(OUT / "03_by_agency.png"); plt.close(fig)
+```
+<img width="1170" height="650" alt="image" src="https://github.com/user-attachments/assets/0aab846d-1dc8-4163-bdc2-2f1d01a7068e" />
 
 
 
