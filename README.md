@@ -199,6 +199,66 @@ fig.tight_layout(); fig.savefig(OUT / "04_victim_age.png"); plt.close(fig)
 ```
 <img width="1170" height="650" alt="image" src="https://github.com/user-attachments/assets/95f1d05c-56de-48cb-86e2-aeed885e4f3a" />
 
+Next, the sex by offense chart:
+```python
+# 5. Victim sex by offense (stacked)
+fig, ax = plt.subplots(figsize=(10, 5))
+top_off = df["CIBRS Offense Description"].value_counts().head(8).index
+sub = df[df["CIBRS Offense Description"].isin(top_off) & df["Victim Sex"].isin(["MALE", "FEMALE"])]
+ct = sub.groupby(["CIBRS Offense Description", "Victim Sex"]).size().unstack(fill_value=0).loc[top_off[::-1]]
+ct.plot(kind="barh", stacked=True, ax=ax, color={"FEMALE": CTP["pink"], "MALE": CTP["sapphire"]})
+ax.set_title("Victim sex by offense type")
+ax.set_xlabel("Number of victims"); ax.set_ylabel("")
+fig.tight_layout(); fig.savefig(OUT / "05_sex_by_offense.png"); plt.close(fig)
+```
+<img width="1300" height="650" alt="image" src="https://github.com/user-attachments/assets/f70751ed-90e5-4bae-91d6-28514035f207" />
+
+Next is our heatmap:
+```python
+# 6. Hour-of-day x day-of-week heatmap
+fig, ax = plt.subplots(figsize=(10, 5))
+piv = df.pivot_table(index="dow", columns="hour", values="Incident UID", aggfunc="count")
+im = ax.imshow(piv, aspect="auto", cmap=CTP_SEQ)
+ax.set_yticks(range(7)); ax.set_yticklabels(["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"])
+ax.set_xticks(range(0, 24, 2)); ax.set_xticklabels(range(0, 24, 2))
+ax.set_xlabel("Hour of day"); ax.set_title("When incidents occur (count by weekday × hour)")
+ax.grid(False)
+fig.colorbar(im, ax=ax, label="Incidents")
+fig.tight_layout(); fig.savefig(OUT / "06_time_heatmap.png"); plt.close(fig)
+```
+<img width="1300" height="650" alt="image" src="https://github.com/user-attachments/assets/95343a56-3b5c-4ad3-97d1-dbfe2cac3949" />
+
+Next, we have our domestic violence bar chart:
+```python
+# 7. Domestic violence share by offense
+fig, ax = plt.subplots(figsize=(9, 5))
+dv = df[df["Domestic Violence Incident"].isin([True, False])]
+share = dv.groupby("CIBRS Offense Description")["Domestic Violence Incident"].mean().reindex(top_off).sort_values()
+ax.barh(share.index, share.values * 100, color=CTP["red"])
+ax.set_title("Share of victims flagged as domestic violence")
+ax.set_xlabel("% domestic violence")
+for i, v in enumerate(share.values):
+    ax.text(v * 100, i, f" {v*100:.0f}%", va="center", fontsize=8)
+fig.tight_layout(); fig.savefig(OUT / "07_dv_share.png"); plt.close(fig)
+```
+<img width="1170" height="650" alt="image" src="https://github.com/user-attachments/assets/09dba76c-aab1-46ae-9270-8242873b00d6" />
+
+Lastly, we have our victim race chart:
+```python
+# 8. Victim race breakdown
+fig, ax = plt.subplots(figsize=(9, 5))
+r = df["Victim Race"].value_counts().head(8).sort_values()
+ax.barh(r.index, r.values, color=CTP["teal"])
+ax.set_title("Victim race/ethnicity (as recorded)")
+ax.set_xlabel("Number of victims")
+fig.tight_layout(); fig.savefig(OUT / "08_victim_race.png"); plt.close(fig)
+```
+
+
+
+
+
+
 
 
 
