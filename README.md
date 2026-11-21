@@ -141,7 +141,7 @@ df["dow"] = df["Incident Date"].dt.dayofweek
 
 ```df["dow"]``` adds a column with the day of the week as a number (0 = Monday ... 6 = Sunday), which is also used by the heatmap. 
 
-# :camera: Visualizing Our Data
+## :camera: Visualizing Our Data
 First, we will start with our "Monthly Incident Trend" visual. 
 
 ```python
