@@ -253,6 +253,7 @@ ax.set_title("Victim race/ethnicity (as recorded)")
 ax.set_xlabel("Number of victims")
 fig.tight_layout(); fig.savefig(OUT / "08_victim_race.png"); plt.close(fig)
 ```
+<img width="1170" height="650" alt="08_victim_race" src="https://github.com/user-attachments/assets/00f0a607-936a-4472-95ec-8dd0b1ba737b" />
 
 
 
